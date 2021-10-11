@@ -4,6 +4,10 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    '[...all]': typeof import('./pages/[...all].vue')['default']
+    '[name]': typeof import('./pages/hi/[name].vue')['default']
+    404: typeof import('./layouts/404.vue')['default']
+    About: typeof import('./pages/about.md')['default']
     CarbonCampsite: typeof import('~icons/carbon/campsite')['default']
     CarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
     CarbonLanguage: typeof import('~icons/carbon/language')['default']
@@ -12,8 +16,32 @@ declare module 'vue' {
     CarbonPedestrian: typeof import('~icons/carbon/pedestrian')['default']
     CarbonSun: typeof import('~icons/carbon/sun')['default']
     CarbonWarning: typeof import('~icons/carbon/warning')['default']
+    Default: typeof import('./layouts/default.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']
+    Home: typeof import('./layouts/home.vue')['default']
+    QAvatar: typeof import('quasar')['QAvatar']
+    QBadge: typeof import('quasar')['QBadge']
+    QBtn: typeof import('quasar')['QBtn']
+    QDrawer: typeof import('quasar')['QDrawer']
+    QFooter: typeof import('quasar')['QFooter']
+    QHeader: typeof import('quasar')['QHeader']
+    QIcon: typeof import('quasar')['QIcon']
+    QInput: typeof import('quasar')['QInput']
+    QItem: typeof import('quasar')['QItem']
+    QItemLabel: typeof import('quasar')['QItemLabel']
+    QItemSection: typeof import('quasar')['QItemSection']
+    QLayout: typeof import('quasar')['QLayout']
+    QList: typeof import('quasar')['QList']
+    QPage: typeof import('quasar')['QPage']
+    QPageContainer: typeof import('quasar')['QPageContainer']
+    QScrollArea: typeof import('quasar')['QScrollArea']
+    QSeparator: typeof import('quasar')['QSeparator']
+    QSpace: typeof import('quasar')['QSpace']
+    QToolbar: typeof import('quasar')['QToolbar']
+    QToolbarTitle: typeof import('quasar')['QToolbarTitle']
+    QTooltip: typeof import('quasar')['QTooltip']
     README: typeof import('./components/README.md')['default']
+    Undefined: typeof import('./pages/index.vue')['default']
   }
 }
 

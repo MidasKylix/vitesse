@@ -9,6 +9,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@quasar/extras": "^1.11.2",
     "@vueuse/core": "^6.5.3",
     "@vueuse/head": "^0.6.0",
     "nprogress": "^0.2.0",

@@ -53,9 +53,6 @@ export default defineConfig({
     Components({
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
-
-      dts: true,
-
       dirs: [
         'src/components',
         'src/layouts',
