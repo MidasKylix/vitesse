@@ -6,6 +6,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
+import { QuasarResolver } from 'unplugin-vue-components/resolvers'
 import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-md'
 import WindiCSS from 'vite-plugin-windicss'
@@ -53,6 +54,14 @@ export default defineConfig({
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
 
+      dts: true,
+
+      dirs: [
+        'src/components',
+        'src/layouts',
+        'src/pages',
+      ],
+
       // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
 
@@ -64,6 +73,7 @@ export default defineConfig({
           componentPrefix: '',
           // enabledCollections: ['carbon']
         }),
+        QuasarResolver(),
       ],
 
       dts: 'src/components.d.ts',
