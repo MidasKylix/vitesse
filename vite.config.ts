@@ -46,7 +46,7 @@ export default defineConfig({
         '@vueuse/head',
         '@vueuse/core',
       ],
-      dts: true,
+      dts: 'src/auto-imports.d.ts',
     }),
 
     // https://github.com/antfu/unplugin-vue-components
@@ -75,10 +75,14 @@ export default defineConfig({
         }),
         QuasarResolver(),
       ],
+
+      dts: 'src/components.d.ts',
     }),
 
     // https://github.com/antfu/unplugin-icons
-    Icons(),
+    Icons({
+      autoInstall: true,
+    }),
 
     // https://github.com/antfu/vite-plugin-windicss
     WindiCSS({
@@ -163,6 +167,7 @@ export default defineConfig({
       'vue',
       'vue-router',
       '@vueuse/core',
+      '@vueuse/head',
     ],
     exclude: [
       'vue-demi',
