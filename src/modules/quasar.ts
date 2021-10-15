@@ -1,11 +1,5 @@
-import { Quasar } from 'quasar'
-import iconSet from 'quasar/icon-set/fontawesome-v5'
-import material from 'quasar/icon-set/material-icons'
-import { UserModule } from '~/types'
+import { install } from 'vite-plugin-quasar/dist/install'
+import '@quasar/extras/material-icons/material-icons.css'
 
-export const install: UserModule = function({ app }) {
-  app.use(Quasar, {
-    iconSet,
-    material,
-  })
-}
+const installQuasar = install({})
+export { installQuasar as install }
