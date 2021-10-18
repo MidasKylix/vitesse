@@ -43,6 +43,7 @@ declare module 'vue' {
     README: typeof import('./components/README.md')['default']
     RouterView: typeof import('quasar/undefined')['RouterView']
     Undefined: typeof import('./pages/index.vue')['default']
+    WeekContent: typeof import('./components/WeekContent/index.vue')['default']
   }
 }
 
