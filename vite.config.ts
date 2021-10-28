@@ -6,7 +6,7 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
-import { QuasarResolver, quasar } from 'vite-plugin-quasar'
+import { quasar, transformAssetUrls } from '@quasar/vite-plugin'
 import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-md'
 import WindiCSS from 'vite-plugin-windicss'
@@ -27,6 +27,7 @@ export default defineConfig({
   plugins: [
     Vue({
       include: [/\.vue$/, /\.md$/],
+      template: { transformAssetUrls }
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
@@ -48,7 +49,9 @@ export default defineConfig({
       ],
       dts: 'src/auto-imports.d.ts',
     }),
-    quasar(),
+    quasar({
+      sassVariables: 'src/quasar-variables.sass'
+    }),
     // https://github.com/antfu/unplugin-vue-components
     Components({
       // allow auto load markdown components under `./src/components/`
@@ -70,7 +73,7 @@ export default defineConfig({
           componentPrefix: '',
           // enabledCollections: ['carbon']
         }),
-        QuasarResolver(),
+        // QuasarResolver(),
       ],
 
       dts: 'src/components.d.ts',

@@ -19,7 +19,7 @@
 
         <q-space />
 
-        <div class="YL__toolbar-input-container row no-wrap">
+        <div class="min-w-25 w-55/100 row no-wrap">
           <q-input
             v-model="search"
             dense
@@ -28,7 +28,7 @@
             placeholder="Search"
             class="bg-white col"
           />
-          <q-btn class="YL__toolbar-input-btn" color="grey-3" text-color="grey-8" icon="search" unelevated />
+          <q-btn class="rounded-none border-solid border-1 border-b-0 border-black/24 max-w-60px w-full " color="grey-3" text-color="grey-8" icon="search" unelevated />
         </div>
 
         <q-space />
@@ -142,7 +142,7 @@
               <a
                 v-for="button in buttons1"
                 :key="button.text"
-                class="YL__drawer-footer-link"
+                class="no-underline font-500 text-xs hover:text-black"
                 href="javascript:void(0)"
               >
                 {{ button.text }}
