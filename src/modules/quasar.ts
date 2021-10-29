@@ -1,5 +1,11 @@
-import { install } from 'vite-plugin-quasar/dist/install'
+import { Quasar, Notify } from 'quasar'
+import { UserModule } from '../types'
 import '@quasar/extras/material-icons/material-icons.css'
 
-const installQuasar = install({})
-export { installQuasar as install }
+export const install: UserModule = ({ app }) => {
+  app.use(Quasar, {
+    plugins: {
+      Notify,
+    },
+  })
+}
